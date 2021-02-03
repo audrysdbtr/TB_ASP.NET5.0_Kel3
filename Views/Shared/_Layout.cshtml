@@ -1,0 +1,75 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Warung CD</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-dark border-bottom box-shadow mb-3">
+            <div class="container">
+                <a class="navbar-brand text-light" asp-area="" asp-controller="Home" asp-action="Beranda">Beranda</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse d-sm-inline-flex right-content-between text-light">
+                    <ul class="navbar-nav flex-grow-1">
+                        <li class="nav-item">
+                            <a class="nav-link text-light" asp-area="" asp-controller="Barang" asp-action="Index">Test crud</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-light" asp-area="" asp-controller="Home" asp-action="Barang">Produk</a>
+                        </li>
+                        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle bg-dark text-light" href="" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Login
+            </a>
+            <div class="dropdown-menu bg-dark" style="padding: 15px; padding-bottom: 10px; padding-left: 30%">
+                <form class="form-horizontal bg-dark" method="post" accept-charset="UTF-8">
+                    <input class="form-control text-light login" type="text" name="username" placeholder="Username.."><br>
+                    <input class="form-control text-light login" type="password" name="password" placeholder="Password.."><br>
+                    <input class="btn btn-primary" type="submit" name="submit" value="Login">
+                    <br>
+                    <a class="text-light" asp-area="" asp-controller="Home" asp-action="Daftar">Buat akun baru</a>
+                </form>
+            </div>
+        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        
+        <div class="jumbotron">
+            <div class="container-jumbo">
+             <br>
+             <br>
+             <br>
+             <h1 class="display-4">Warung CD</h1>
+             <br>
+             <p class="lead">Menyediakan Software Untuk Keperluan Instalasi Ulang</p>
+             <hr class="my-4">
+             <br>
+            </div>
+
+    </header>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="border-top footer text-muted">
+        <div class="container">
+            &copy; 2021 - Kelompok 4 - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+        </div>
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
